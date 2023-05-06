@@ -1,0 +1,276 @@
+{ "columns":0,
+ "grid":
+    {
+     "height":1,
+     "orientation":"orthogonal",
+     "width":1
+    },
+ "margin":0,
+ "name":"Other",
+ "spacing":0,
+ "tilecount":43,
+ "tiledversion":"1.10.1",
+ "tileheight":77,
+ "tiles":[
+        {
+         "id":0,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props.png",
+         "imageheight":46,
+         "imagewidth":32
+        }, 
+        {
+         "id":1,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props1.png",
+         "imageheight":31,
+         "imagewidth":32
+        }, 
+        {
+         "id":2,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props2.png",
+         "imageheight":46,
+         "imagewidth":32
+        }, 
+        {
+         "id":3,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props3(1).png",
+         "imageheight":52,
+         "imagewidth":26
+        }, 
+        {
+         "id":4,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props3.png",
+         "imageheight":52,
+         "imagewidth":26
+        }, 
+        {
+         "id":5,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props4.png",
+         "imageheight":27,
+         "imagewidth":5
+        }, 
+        {
+         "id":6,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props5.png",
+         "imageheight":41,
+         "imagewidth":56
+        }, 
+        {
+         "id":7,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props6.png",
+         "imageheight":61,
+         "imagewidth":27
+        }, 
+        {
+         "id":8,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props7.png",
+         "imageheight":72,
+         "imagewidth":37
+        }, 
+        {
+         "id":9,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props8.png",
+         "imageheight":37,
+         "imagewidth":22
+        }, 
+        {
+         "id":10,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props9.png",
+         "imageheight":61,
+         "imagewidth":27
+        }, 
+        {
+         "id":11,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props10.png",
+         "imageheight":36,
+         "imagewidth":64
+        }, 
+        {
+         "id":12,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props11.png",
+         "imageheight":57,
+         "imagewidth":32
+        }, 
+        {
+         "id":13,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props12.png",
+         "imageheight":77,
+         "imagewidth":32
+        }, 
+        {
+         "id":14,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props13.png",
+         "imageheight":57,
+         "imagewidth":32
+        }, 
+        {
+         "id":15,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props14(1).png",
+         "imageheight":72,
+         "imagewidth":94
+        }, 
+        {
+         "id":16,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props14.png",
+         "imageheight":72,
+         "imagewidth":94
+        }, 
+        {
+         "id":17,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props15.png",
+         "imageheight":49,
+         "imagewidth":55
+        }, 
+        {
+         "id":18,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props16.png",
+         "imageheight":40,
+         "imagewidth":30
+        }, 
+        {
+         "id":19,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props17.png",
+         "imageheight":36,
+         "imagewidth":28
+        }, 
+        {
+         "id":20,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props18.png",
+         "imageheight":32,
+         "imagewidth":27
+        }, 
+        {
+         "id":21,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props19.png",
+         "imageheight":32,
+         "imagewidth":27
+        }, 
+        {
+         "id":22,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props20.png",
+         "imageheight":34,
+         "imagewidth":21
+        }, 
+        {
+         "id":23,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props21.png",
+         "imageheight":27,
+         "imagewidth":25
+        }, 
+        {
+         "id":24,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props22.png",
+         "imageheight":32,
+         "imagewidth":21
+        }, 
+        {
+         "id":25,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props23.png",
+         "imageheight":40,
+         "imagewidth":26
+        }, 
+        {
+         "id":26,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props24.png",
+         "imageheight":41,
+         "imagewidth":30
+        }, 
+        {
+         "id":27,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props25.png",
+         "imageheight":46,
+         "imagewidth":32
+        }, 
+        {
+         "id":28,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props26.png",
+         "imageheight":42,
+         "imagewidth":58
+        }, 
+        {
+         "id":29,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props27.png",
+         "imageheight":12,
+         "imagewidth":11
+        }, 
+        {
+         "id":30,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props28.png",
+         "imageheight":14,
+         "imagewidth":16
+        }, 
+        {
+         "id":31,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props29.png",
+         "imageheight":19,
+         "imagewidth":24
+        }, 
+        {
+         "id":32,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props30.png",
+         "imageheight":22,
+         "imagewidth":27
+        }, 
+        {
+         "id":33,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props31.png",
+         "imageheight":27,
+         "imagewidth":27
+        }, 
+        {
+         "id":34,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props32.png",
+         "imageheight":16,
+         "imagewidth":18
+        }, 
+        {
+         "id":35,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props33.png",
+         "imageheight":16,
+         "imagewidth":19
+        }, 
+        {
+         "id":36,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props34.png",
+         "imageheight":19,
+         "imagewidth":31
+        }, 
+        {
+         "id":37,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props35.png",
+         "imageheight":5,
+         "imagewidth":5
+        }, 
+        {
+         "id":38,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props36.png",
+         "imageheight":7,
+         "imagewidth":5
+        }, 
+        {
+         "id":39,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props37.png",
+         "imageheight":5,
+         "imagewidth":5
+        }, 
+        {
+         "id":40,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props38.png",
+         "imageheight":5,
+         "imagewidth":5
+        }, 
+        {
+         "id":41,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props39.png",
+         "imageheight":49,
+         "imagewidth":32
+        }, 
+        {
+         "id":42,
+         "image":"\u041c\u0435\u043b\u043e\u0447\u044c\/TX Props16.png",
+         "imageheight":40,
+         "imagewidth":30
+        }],
+ "tilewidth":94,
+ "type":"tileset",
+ "version":"1.10"
+}

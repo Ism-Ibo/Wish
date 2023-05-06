@@ -1,0 +1,102 @@
+{ "columns":0,
+ "grid":
+    {
+     "height":1,
+     "orientation":"orthogonal",
+     "width":1
+    },
+ "margin":0,
+ "name":"Trees",
+ "spacing":0,
+ "tilecount":14,
+ "tiledversion":"1.10.1",
+ "tileheight":148,
+ "tiles":[
+        {
+         "id":0,
+         "image":"\u0414\u0435\u0440\u0435\u0432\u044c\u044f\/TX Plant.png",
+         "imageheight":148,
+         "imagewidth":116
+        }, 
+        {
+         "id":1,
+         "image":"\u0414\u0435\u0440\u0435\u0432\u044c\u044f\/TX Plant1.png",
+         "imageheight":142,
+         "imagewidth":108
+        }, 
+        {
+         "id":2,
+         "image":"\u0414\u0435\u0440\u0435\u0432\u044c\u044f\/TX Plant2.png",
+         "imageheight":148,
+         "imagewidth":84
+        }, 
+        {
+         "id":3,
+         "image":"\u0414\u0435\u0440\u0435\u0432\u044c\u044f\/TX Plant3.png",
+         "imageheight":32,
+         "imagewidth":36
+        }, 
+        {
+         "id":4,
+         "image":"\u0414\u0435\u0440\u0435\u0432\u044c\u044f\/TX Plant4.png",
+         "imageheight":32,
+         "imagewidth":36
+        }, 
+        {
+         "id":5,
+         "image":"\u0414\u0435\u0440\u0435\u0432\u044c\u044f\/TX Plant5.png",
+         "imageheight":46,
+         "imagewidth":50
+        }, 
+        {
+         "id":6,
+         "image":"\u0414\u0435\u0440\u0435\u0432\u044c\u044f\/TX Plant6.png",
+         "imageheight":62,
+         "imagewidth":54
+        }, 
+        {
+         "id":7,
+         "image":"\u0414\u0435\u0440\u0435\u0432\u044c\u044f\/TX Plant7.png",
+         "imageheight":58,
+         "imagewidth":56
+        }, 
+        {
+         "id":8,
+         "image":"\u0414\u0435\u0440\u0435\u0432\u044c\u044f\/TX Plant8.png",
+         "imageheight":40,
+         "imagewidth":50
+        }, 
+        {
+         "id":9,
+         "image":"\u0414\u0435\u0440\u0435\u0432\u044c\u044f\/TX Plant9.png",
+         "imageheight":18,
+         "imagewidth":29
+        }, 
+        {
+         "id":10,
+         "image":"\u0414\u0435\u0440\u0435\u0432\u044c\u044f\/TX Plant10.png",
+         "imageheight":15,
+         "imagewidth":18
+        }, 
+        {
+         "id":11,
+         "image":"\u0414\u0435\u0440\u0435\u0432\u044c\u044f\/TX Plant11.png",
+         "imageheight":17,
+         "imagewidth":19
+        }, 
+        {
+         "id":12,
+         "image":"\u0414\u0435\u0440\u0435\u0432\u044c\u044f\/TX Plant12.png",
+         "imageheight":13,
+         "imagewidth":18
+        }, 
+        {
+         "id":13,
+         "image":"\u0414\u0435\u0440\u0435\u0432\u044c\u044f\/TX Plant13.png",
+         "imageheight":8,
+         "imagewidth":8
+        }],
+ "tilewidth":116,
+ "type":"tileset",
+ "version":"1.10"
+}
