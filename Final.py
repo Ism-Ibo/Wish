@@ -6,10 +6,15 @@ SCREEN_HEIGHT = 1080
 
 
 class Final(arcade.Window):
-
-
     def __init__(self):
-        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, "My Game", fullscreen=True)
+        super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, "Final", fullscreen=True)
+        self.image = None
+        self.texture = None
+        self.dialoge = None
+        self.dialoge_num = None
+        arcade.set_background_color(arcade.csscolor.DARK_SLATE_BLUE)
+
+    def setup(self):
         with sqlite3.connect('baza.db') as con:
             cur = con.cursor()
             cur.execute("""CREATE TABLE IF NOT EXISTS users(
@@ -20,11 +25,9 @@ class Final(arcade.Window):
             cur.execute(
                 f"""UPDATE users SET knb = 0, space = 0, sparta = 0""")
             cur.execute("""SELECT * FROM users""")
-
             con.commit()
         self.dialoge_num = 0
         self.dialoge = arcade.Sprite()
-        arcade.set_background_color(arcade.csscolor.DARK_SLATE_BLUE)
 
     def on_draw(self):
         arcade.start_render()
@@ -52,11 +55,12 @@ class Final(arcade.Window):
         if key == arcade.key.ESCAPE:
             arcade.exit()
 
+
 def main():
     window = Final()
+    window.setup()
     arcade.run()
+
 
 if __name__ == '__main__':
     main()
-
-

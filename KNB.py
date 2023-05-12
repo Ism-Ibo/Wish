@@ -1,25 +1,26 @@
 import os
-import arcade.key
 import sqlite3
-from Map import KNB_map, KNB_map_draw
+
+
+from Map import knb_map, knb_map_draw
 from Logic_for_KNB import *
-from Counter_for_Animations import num_count, count, counter
-SCREEN_WIDTH = 1920
-SCREEN_HEIGHT = 1080
+SCREEN_WIDTH = 1536
+SCREEN_HEIGHT = 864
 
 
 class MyKNB(arcade.Window):
 
-
     def __init__(self):
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, "My Game", fullscreen=True)
-        num_count(self)
         self.start = True
         self.Done = False
         self.npc_sprite = None
         self.npc_list = None
         self.player_sprite = None
         self.player_list = None
+        self.game_over = None
+        self.image = None
+        self.texture = None
         self.random_npc = 0
         self.player_number = 0
         self.player_score = 0
@@ -39,14 +40,14 @@ class MyKNB(arcade.Window):
         self.dialoge = arcade.Sprite()
         arcade.set_background_color(arcade.csscolor.DARK_SLATE_BLUE)
 
-
-
     def setup(self):
-
-        KNB_map(self)
+        self.player_list = arcade.SpriteList()
+        self.npc_list = arcade.SpriteList()
+        self.game_over = arcade.Sprite()
+        knb_map(self)
 
     def on_key_press(self, key: int, modifiers: int):
-        if self.start == False:
+        if self.start == 0:
             if key == arcade.key.Q:
                 Q(self)
             elif key == arcade.key.W:
@@ -57,7 +58,7 @@ class MyKNB(arcade.Window):
             if key == arcade.key.R:
                 self.player_score = 0
                 self.npc_score = 0
-            if self.Done == True:
+            if self.Done:
                 if key == arcade.key.ENTER:
                     self.player_score = 0
                     self.npc_score = 0
@@ -76,9 +77,6 @@ class MyKNB(arcade.Window):
         if key == arcade.key.ESCAPE:
             arcade.exit()
 
-
-
-
     def on_draw(self):
         if self.start:
             arcade.start_render()
@@ -94,12 +92,9 @@ class MyKNB(arcade.Window):
             self.dialoge.center_y = 450
             self.dialoge.texture = self.texture
 
-
-
-        if self.start == False:
-            count(self)
+        if self.start == 0:
             arcade.start_render()
-            KNB_map_draw(self)
+            knb_map_draw(self)
             self.death_list.draw()
             self.npc_sprite_list.draw()
             arcade.draw_circle_outline(461, 71, 11, arcade.csscolor.BLACK)
@@ -140,37 +135,31 @@ class MyKNB(arcade.Window):
                     cur.execute(
                         f"""UPDATE users SET knb = 1""")
                     cur.execute("""SELECT * FROM users""")
-
                     con.commit()
-                arcade.draw_text('You Win', 695, 427, arcade.csscolor.BLACK, font_size=24, font_name='Showcard Gothic')
+                arcade.draw_text('You Win', 695, 427, arcade.csscolor.BLACK,
+                                 font_size=24, font_name='Showcard Gothic')
                 self.Done = True
-                arcade.draw_text('[ENTER] - back', 680, 400, arcade.csscolor.BLACK, font_size=15, font_name='Showcard Gothic')
+                arcade.draw_text('[ENTER] - back', 680, 400, arcade.csscolor.BLACK,
+                                 font_size=15, font_name='Showcard Gothic')
 
             elif self.npc_score >= 3:
-                arcade.draw_text('Game Over', 680, 427, arcade.csscolor.BLACK, font_size=24, font_name='Showcard Gothic')
-                arcade.draw_text('R - replay', 680, 400, arcade.csscolor.BLACK, font_size=15, font_name='Showcard Gothic')
-            elif self.random_npc == 1 and self.player_number == 1 or self.random_npc == 2 and self.player_number == 2 or self.random_npc == 3 and self.player_number == 3:
-                arcade.draw_text('Draw', 710, 427, arcade.csscolor.BLACK, font_size=24, font_name='Showcard Gothic')
-            try:
-
-                self.player_list.draw()
-                self.npc_list.draw()
-                self.game_over.draw()
-            except:
-                pass
-
+                arcade.draw_text('Game Over', 680, 427, arcade.csscolor.BLACK,
+                                 font_size=24, font_name='Showcard Gothic')
+                arcade.draw_text('R - replay', 680, 400, arcade.csscolor.BLACK,
+                                 font_size=15, font_name='Showcard Gothic')
+            elif self.random_npc == 1 and self.player_number == 1 or self.random_npc == 2 and self.player_number == 2 \
+                    or self.random_npc == 3 and self.player_number == 3:
+                arcade.draw_text('Draw', 710, 427, arcade.csscolor.BLACK,
+                                 font_size=24, font_name='Showcard Gothic')
+            self.player_list.draw()
+            self.npc_list.draw()
+            self.game_over.draw()
 
     def update(self, delta_time):
-        counter(self)
-        try:
-            self.player_list.update()
-            self.npc_list.update()
-        except:
-            pass
 
+        self.player_list.update()
+        self.npc_list.update()
         self.npc_sprite_list.update()
-        #PLAYER UPDATE
-
         self.dialoge.update()
         self.death_list.update()
 
@@ -181,7 +170,6 @@ class MyKNB(arcade.Window):
 def main():
     window = MyKNB()
     window.setup()
-
     arcade.run()
 
 

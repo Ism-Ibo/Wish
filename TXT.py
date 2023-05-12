@@ -1,23 +1,28 @@
 import os
 import random
 
-import sqlite3
 
-from Map import TXT_map, TXT_map_draw
-from Counter_for_Animations import count, counter, num_count
+from Map import txt_map, txt_map_draw
 from Locig_for_TXT import *
-SCREEN_WIDTH = 1920
-SCREEN_HEIGHT = 1080
+SCREEN_WIDTH = 1536
+SCREEN_HEIGHT = 864
+
 
 class TXTGame(arcade.Window):
     def __init__(self):
         self.gladiator_list = arcade.SpriteList()
-        num_count(self)
         self.miles = 0
         self.thirst = 0
         self.fatigue = 0
         self.pursuit = -20
-        self.drink = 3
+        self.drink = 4
+
+        self.gladiator_sprite = None
+        self.dear = None
+        self.random_slow_miles = None
+        self.random_miles = None
+        self.image = None
+        self.texture = None
 
         self.begin = False
         self.basic = False
@@ -34,8 +39,9 @@ class TXTGame(arcade.Window):
         self.dialoge_num = 0
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT, 'TXT', fullscreen=True)
         arcade.set_background_color(arcade.csscolor.DARK_SLATE_BLUE)
+
     def setup(self):
-        TXT_map(self)
+        txt_map(self)
 
     def on_draw(self):
         if self.dialogue:
@@ -51,47 +57,43 @@ class TXTGame(arcade.Window):
             self.dialoge.center_y = 450
             self.dialoge.texture = self.texture
             self.dialoge.draw()
-        if self.dialogue == False:
-            count(self, x=5)
+        if self.dialogue == 0:
+
             arcade.start_render()
-            TXT_map_draw(self)
+            txt_map_draw(self)
             logic(self)
-            arcade.draw_text('Troops of Sparta', 620, 776, arcade.csscolor.BLACK, font_size=24, font_name='Showcard Gothic')
-            arcade.draw_text('[SPACE] - Пропустить/Окей', 1250, 38, arcade.csscolor.BLACK, font_size=15)
-            if self.begin == True:
+            arcade.draw_text('Troops of Sparta', 620, 776, arcade.csscolor.BLACK,
+                             font_size=24, font_name='Showcard Gothic')
+            arcade.draw_text('[SPACE] - Skip/Continue', 1250, 38, arcade.csscolor.BLACK,
+                             font_size=15, font_name='Showcard Gothic')
+            if self.begin:
                 begin(self)
 
-            elif self.basic == True and self.begin == False:
-                basic(self)
+            elif self.basic and self.begin == 0:
+                basic()
 
-            elif self.drink_water == True and self.begin == False and self.basic == False:
+            elif self.drink_water and self.begin == 0 and self.basic == 0:
                 drink_water(self)
 
-            elif self.slow_run == True and self.begin == False and self.basic == False:
+            elif self.slow_run and self.begin == 0 and self.basic == 0:
                 slow_run(self)
                 dealer(self)
 
-            elif self.fast_run == True and self.begin == False and self.basic == False:
+            elif self.fast_run and self.begin == 0 and self.basic == 0:
                 fast_run(self)
                 dealer(self)
 
-            elif self.sleep == True and self.begin == False and self.basic == False:
+            elif self.sleep and self.begin == 0 and self.basic == 0:
                 sleep(self)
 
-            elif self.status == True and self.begin == False and self.basic == False:
+            elif self.status and self.begin == 0 and self.basic == 0:
                 status(self)
-
-
 
     def update(self, delta_time: float):
         if self.dialogue:
             self.dialoge.update()
-        if self.dialogue == False:
-            counter(self, x=5)
-            try:
-                self.gladiator_sprite = arcade.Sprite(f'Texture/Gladiator/r0.gif', scale=1)
-            except:
-                pass
+        if self.dialogue == 0:
+            self.gladiator_sprite = arcade.Sprite(f'Texture/Gladiator/r0.gif', scale=1)
             self.gladiator_sprite.center_x = 820
             self.gladiator_sprite.center_y = 262
             self.gladiator_list = arcade.SpriteList()
@@ -110,28 +112,31 @@ class TXTGame(arcade.Window):
             if self.dialoge_num < 16:
                 if key == arcade.key.RIGHT:
                     self.dialoge_num += 1
-        if self.dialogue == False:
-            if self.Done == True:
+        if self.dialogue == 0:
+            if self.Done:
                 if key == arcade.key.ENTER:
                     arcade.close_window()
                     os.system('python main.py')
-            elif self.Done == False:
+            elif self.Done == 0:
                 if key == arcade.key.R:
                     self.miles = 0
                     self.thirst = 0
                     self.fatigue = 0
                     self.pursuit = -15
                     self.drink = 3
+                    self.basic = True
             self.dear = random.randrange(20)
-            if self.begin == True:
+            if self.begin:
                 if key == arcade.key.SPACE:
                     self.begin = False
-            if self.begin == False:
+            if self.begin == 0:
                 if key == arcade.key.KEY_1:
                     self.basic = False
                     self.drink_water = True
-                    self.drink -= 1
-                    self.thirst = 0
+                    if self.drink > 0:
+                        self.drink -= 1
+                    if self.drink > 0:
+                        self.thirst = 0
                 elif key == arcade.key.KEY_2:
                     self.basic = False
                     self.slow_run = True
@@ -160,7 +165,7 @@ class TXTGame(arcade.Window):
                 elif key == arcade.key.KEY_5:
                     self.basic = False
                     self.status = True
-                if self.basic == False:
+                if self.basic == 0:
                     if key == arcade.key.SPACE:
                         self.drink_water = False
                         self.slow_run = False
@@ -171,14 +176,16 @@ class TXTGame(arcade.Window):
         if key == arcade.key.ESCAPE:
             arcade.exit()
 
-
     def on_mouse_press(self, x: int, y: int, button: int, modifiers: int):
         if button == arcade.MOUSE_BUTTON_LEFT:
             print(x, y)
+
+
 def main():
     window = TXTGame()
     window.setup()
     arcade.run()
+
 
 if __name__ == "__main__":
     main()
